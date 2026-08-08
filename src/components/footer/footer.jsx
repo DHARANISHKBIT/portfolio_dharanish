@@ -20,11 +20,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold">Navigation</h3>
             <ul className="mt-6 space-y-3 text-sm text-slate-400">
-              <li><a href="#home" className="transition hover:text-cyan-400">Home</a></li>
-              <li><a href="#about" className="transition hover:text-cyan-400">About</a></li>
-              <li><a href="#skills" className="transition hover:text-cyan-400">Skills</a></li>
-              <li><a href="#projects" className="transition hover:text-cyan-400">Projects</a></li>
-              <li><a href="#contact" className="transition hover:text-cyan-400">Contact</a></li>
+              <li><a href="/" className="transition hover:text-cyan-400">Home</a></li>
+              <li><a href="/#about" className="transition hover:text-cyan-400">About</a></li>
+              <li><a href="/#skills" className="transition hover:text-cyan-400">Skills</a></li>
+              <li><a href="/#projects" className="transition hover:text-cyan-400">Projects</a></li>
+              <li><a href="/#contact" className="transition hover:text-cyan-400">Contact</a></li>
             </ul>
           </div>
 
