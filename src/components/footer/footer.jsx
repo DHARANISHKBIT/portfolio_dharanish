@@ -12,8 +12,8 @@ export default function Footer() {
               Full Stack Developer focused on modern, responsive, and scalable web experiences with thoughtful design and dependable engineering.
             </p>
             <div className="mt-8 flex gap-3">
-              <a href="https://github.com/your-github" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"><FaGithub /></a>
-              <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"><FaLinkedin /></a>
+              <a href="https://github.com/DHARANISHKBIT" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/dharanish-k-27784a2a1/" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"><FaLinkedin /></a>
             </div>
           </div>
 

@@ -1,8 +1,31 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!name || !email || !subject || !message) {
+      setStatus("Please fill in all fields before sending.");
+      return;
+    }
+
+    const mailtoLink = `mailto:dharanish.k282@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+
+    setStatus("Opening your email app...");
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section id="contact" className="bg-slate-950/70 py-24 text-slate-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,22 +50,47 @@ export default function Contact() {
             ))}
 
             <div className="flex gap-3 pt-2">
-              <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-cyan-400 transition hover:border-cyan-400"> <FaLinkedin /> </a>
-              <a href="https://github.com/your-github" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-cyan-400 transition hover:border-cyan-400"> <FaGithub /> </a>
+              <a href="https://www.linkedin.com/in/dharanish-k-27784a2a1/" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-cyan-400 transition hover:border-cyan-400"> <FaLinkedin /> </a>
+              <a href="https://github.com/DHARANISHKBIT" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-cyan-400 transition hover:border-cyan-400"> <FaGithub /> </a>
             </div>
           </div>
 
           <motion.div initial={{ opacity: 0, x: 14 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }} className="rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-6 sm:p-8">
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-5 md:grid-cols-2">
-                <input type="text" placeholder="Your Name" className="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400" />
-                <input type="email" placeholder="Your Email" className="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400" />
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  type="text"
+                  placeholder="Your Name"
+                  className="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400"
+                />
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  placeholder="Your Email"
+                  className="rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400"
+                />
               </div>
-              <input type="text" placeholder="Subject" className="w-full rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400" />
-              <textarea rows="6" placeholder="Message" className="w-full resize-none rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400" />
-              <button type="button" className="rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-6 py-3 font-semibold text-white transition hover:scale-[1.01]">
+              <input
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                type="text"
+                placeholder="Subject"
+                className="w-full rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400"
+              />
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows="6"
+                placeholder="Message"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-4 text-sm text-slate-200 outline-none transition focus:border-cyan-400"
+              />
+              <button type="submit" className="rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-6 py-3 font-semibold text-white transition hover:scale-[1.01]">
                 Send Message
               </button>
+              {status && <p className="text-sm text-cyan-300">{status}</p>}
             </form>
           </motion.div>
         </div>

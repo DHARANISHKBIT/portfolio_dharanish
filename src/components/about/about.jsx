@@ -59,7 +59,7 @@ const About = () => {
             </div>
 
             <div className="mt-8 flex justify-center gap-3">
-              {[{ icon: <FaLinkedin />, href: "https://linkedin.com/in/your-linkedin" }, { icon: <FaGithub />, href: "https://github.com/your-github" }, { icon: <FaTwitter />, href: "https://twitter.com" }, { icon: <FaInstagram />, href: "https://instagram.com" }].map((item, index) => (
+              {[{ icon: <FaLinkedin />, href: "https://www.linkedin.com/in/dharanish-k-27784a2a1/" }, { icon: <FaGithub />, href: "https://github.com/DHARANISHKBIT" }, { icon: <FaTwitter />, href: "https://twitter.com" }, { icon: <FaInstagram />, href: "https://instagram.com" }].map((item, index) => (
                 <a key={index} href={item.href} target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300">
                   {item.icon}
                 </a>

@@ -46,8 +46,8 @@ const Hero = () => {
 
           <div className="mt-8 flex flex-wrap gap-3">
             {[
-              { icon: <FaGithub />, href: "https://github.com/your-github" },
-              { icon: <FaLinkedinIn />, href: "https://linkedin.com/in/your-linkedin" },
+              { icon: <FaGithub />, href: "https://github.com/DHARANISHKBIT" },
+              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/dharanish-k-27784a2a1/" },
               { icon: <FaEnvelope />, href: "mailto:dharanish.k282@gmail.com" },
             ].map((item, index) => (
               <a key={index} href={item.href} target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-lg text-slate-200 transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300">
